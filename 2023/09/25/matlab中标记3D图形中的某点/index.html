@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>原码反码与补码 | Hao Zhi</title>
+  <title>matlab中标记3D图形中的某点 | Hao Zhi</title>
   <meta name="keywords" content="">
-  <meta name="description" content="原码反码与补码 | Hao Zhi">
+  <meta name="description" content="matlab中标记3D图形中的某点 | Hao Zhi">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介郝智毕业于北京理工大学 联系方式 mail: haozhibit@163.com">
 <meta property="og:type" content="website">
@@ -290,9 +290,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-原码反码与补码" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-matlab中标记3D图形中的某点" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">原码反码与补码</h1>
+        <h1 class="article-title">matlab中标记3D图形中的某点</h1>
     
     <div class="article-meta">
         
@@ -302,12 +302,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-11-13 20:49:03'>2022-11-13 20:31</time>
+            Created At : <time class="date" title='Updated At: 2023-09-25 16:58:07'>2023-09-25 16:55</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:254</span>
+        <span>Count:172</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -326,7 +326,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目的"><span class="toc-text">目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -342,22 +342,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>二进制原码、反码与补码</p>
-<ol>
-<li><code>原码</code></li>
-</ol>
-<p>原码是指将最高位作为符号位(0表示正，1表示负)，其它数字位代表数值本身的绝对值的数字表示方式。</p>
-<ol start="2">
-<li><code>反码</code></li>
-</ol>
-<p>反码表示规则为：如果是正数，则表示方法和原码一样；如果是负数，符号位不变，其余各位取反，则得到这个数字的反码表示形式。</p>
-<p>例如，数字6 在8位 计算机中的反码就是它的原码：00000110</p>
-<p>数字－6 在 8位计算机中的反码为：11111001</p>
-<ol start="3">
-<li><code>补码</code></li>
-</ol>
-<p>补码是计算机表示数据的一般方式，其规则为：如果是正数，则表示方法和原码一样；如果是负数，则将数字的反码加上1(相当于将原码数值位取反然后在最低位加1)。</p>
-<p>　　例如：数字6 在8位 计算机中的补码就是它的原码：00000110<br>　　            数字－6 在8 位 计算机中的补码为：1111 1010</p>
+        <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>在雷达算法调试的过程中，为了方便查看2D检测的结果，将检测点结果可视化在三维频谱上。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><pre><code class="matlab">% x,y,z是要标记的点的坐标
+% r.表示颜色
+% ‘markersize’，30是点的大小
+plot3(x,y,z,&#39;r.&#39;,&#39;markersize&#39;,&#39;30&#39;);</code></pre>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>大部分情况下需要同时选取数组的多个元素，使用sub2ind函数。<br>例子：对于矩阵A想要取出位置为[1,1]和位置[3,3]的元素，ind = [1,1;3,3]，即第一列为行数，第二列为列数，命令A(sub2ind(size(A),ind(:,1),ind(:,2)))可达到取出该元素的目的。即plot3中的z。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 haozhibit@163.com </span>
