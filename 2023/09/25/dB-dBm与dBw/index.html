@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | Hao Zhi</title>
+  <title>dB,dBm与dBw | Hao Zhi</title>
   <meta name="keywords" content="">
-  <meta name="description" content="about | Hao Zhi">
+  <meta name="description" content="dB,dBm与dBw | Hao Zhi">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介郝智毕业于北京理工大学 联系方式 mail: haozhibit@163.com">
 <meta property="og:type" content="website">
@@ -274,9 +274,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-dB-dBm与dBw" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">dB,dBm与dBw</h1>
     
     <div class="article-meta">
         
@@ -286,12 +286,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-09-07 22:04:24'>2020-06-27 13:54</time>
+            Created At : <time class="date" title='Updated At: 2023-09-25 11:57:19'>2023-09-25 11:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:23</span>
+        <span>Count:597</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -310,7 +310,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#个人简介"><span class="toc-text">个人简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系方式"><span class="toc-text">联系方式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dB、dBm与dBw"><span class="toc-text">dB、dBm与dBw</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dB"><span class="toc-text">dB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dBm与dBw"><span class="toc-text">dBm与dBw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dB家族"><span class="toc-text">dB家族</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -326,10 +326,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>郝智<br>毕业于北京理工大学</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ol>
-<li>mail: <a href="mailto:haozhibit@163.com">haozhibit@163.com</a></li>
-</ol>
+        <h1 id="dB、dBm与dBw"><a href="#dB、dBm与dBw" class="headerlink" title="dB、dBm与dBw"></a>dB、dBm与dBw</h1><h2 id="dB"><a href="#dB" class="headerlink" title="dB"></a>dB</h2><p>​        dB是无线通信中的基本概念。如“传播损耗是 dB”、“发射功率是dBm”、“天线增益是dBi”。</p>
+<p>​        最常见的3dB，它在功率图或者误码率图中经常出现，下降3dB就是指功率下降一半，3dB点指的就是半功率点。</p>
+<p>​        +3dB表示增大为原来的两倍，-3dB表示下降为原来的1/2.</p>
+<blockquote>
+<p>dB = 10lg(P1/P0)</p>
+</blockquote>
+<p>​        dB表示功率P1相对于参考功率P0的大小关系。</p>
+<p>​        常用的dB值中，+10dB表示功率增加为原来的10倍，-10dB表示功率减小为原来的1/10.</p>
+<p>​        可见，dB是一个相对值，它的作用是把一个很大或者很小的数，用一个简短的形式表达出来。这可以极大的方便我们的计算和描述。尤其是在绘制表格的时候，如果没有换算成dB，那么坐标轴将很长无法表示。</p>
+<blockquote>
+<p>功率变化增大到原来的100000000倍，用dB表示为10lg10^8 = 80dB，减小到原来的0.00000001倍，用dB表示为-80dB。</p>
+</blockquote>
+<h2 id="dBm与dBw"><a href="#dBm与dBw" class="headerlink" title="dBm与dBw"></a>dBm与dBw</h2><p>​        这是最常用的两个单位。它们对应的就是把dB公式中的参考功率P0分别变换成1mW、1W。由于1mW、1W都是确定的值，因此dBm和dBw都可以表示功率的绝对值。</p>
+<p><img src="C:%5CUsers%5Chz257%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221121112324044.png" alt="image-20221121112324044"></p>
+<p>​        这里需要特别记住的是1W=30dBm。</p>
+<blockquote>
+<p>例子：44dBm = 30dBm + 10dB + 10dB - 3dB -3dB，<br>因此44dBm = 1W×10×10/2/2 = 25W</p>
+</blockquote>
+<p>​        这里需要注意，等式右侧除了30dBm，其余的拆分项都要用dB表示。即用一个dBx减另一个dBx时，得到的结果用dB表示。如功率46dBm比功率40dBm大6dB。</p>
+<p>​        另外要注意dB是相对值，而dBm和dBw则对应的是绝对值。</p>
+<blockquote>
+<p>例如46dB表示P1为P0的4万倍，46dBm表示P1的值为40W。</p>
+</blockquote>
+<p>​        dB家族中常见的还有dBi、dBd、dBc。 它们的计算方法与dB的计算方法完全一样，表示的还是功率的相对值。不同的是，它们的参考基准不同，即分母上的参考功率P0 所代表的含义不同。</p>
+<p>​        此外，dB家族不仅可以表示功率的增益和损耗，还可以表示电压、电流、音频等，大家要具体场景具体应用。需要注意的是，对于功率的增益，我们用10lg(Po /Pi )，对于电压和电流的增益，要用20lg(Vo /Vi )、20lg(Io /Ii)。</p>
+<h2 id="dB家族"><a href="#dB家族" class="headerlink" title="dB家族"></a>dB家族</h2><p><img src="C:%5CUsers%5Chz257%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20221121113718549.png" alt="image-20221121113718549"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 haozhibit@163.com </span>

@@ -128,7 +128,7 @@
 
 
 <ul>
-    <li><div class="all active" data-rel="All">All<small>(4)</small></div></li>
+    <li><div class="all active" data-rel="All">All<small>(5)</small></div></li>
     
         
             
@@ -160,8 +160,8 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">About</a><a style="width: 50%"  class="friends">Friends</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
-<input type="hidden" id="yelog_site_word_count" value="1.1k">
+<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_word_count" value="1.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -216,6 +216,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="All "
+           href="/2023/09/25/dB-dBm%E4%B8%8EdBw/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="dB,dBm与dBw">dB,dBm与dBw</span>
+            <span class="post-date" title="2023-09-25 11:56:57">2023/09/25</span>
+        </a>
         
         <a  class="All "
            href="/2023/09/25/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/"
@@ -278,12 +286,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-09-25 10:48:55'>2023-09-25 10:48</time>
+            Created At : <time class="date" title='Updated At: 2023-09-25 11:21:25'>2023-09-25 10:48</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:799</span>
+        <span>Count:796</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -302,7 +310,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FFT算法的主要步骤"><span class="toc-text">FFT算法的主要步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cooley-Tukey算法的基本原理"><span class="toc-text">Cooley-Tukey算法的基本原理</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -318,11 +326,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>快速傅里叶变换（Fast Fourier Transform，FFT）是一种高效计算离散傅里叶变换（Discrete Fourier Transform，DFT）的算法。它通过利用傅里叶变换的对称性和周期性，将计算复杂度从O(N^2)降低到O(N log N)，其中N是信号长度。</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>快速傅里叶变换（Fast Fourier Transform，FFT）</code>是一种高效计算离散傅里叶变换（Discrete Fourier Transform，DFT）的算法。它通过利用傅里叶变换的对称性和周期性，将计算复杂度从O(N^2)降低到O(N log N)，其中N是信号长度。</p>
 <p>傅里叶变换将一个信号（或序列）从时域转换到频域，它将信号分解为一系列正弦和余弦函数（频谱成分），表示每个频率成分的振幅和相位。DFT是计算离散信号的傅里叶变换，它将信号离散化为一系列离散采样点。</p>
 <p>FFT算法的核心思想是基于”分治法”，它将DFT的计算分解为一系列较小的DFT计算。它利用了傅里叶变换的周期性和对称性质，将一个长度为N的DFT分解为多个长度为N/2的DFT，然后再将这些子问题分解为更小的子问题，以此类推，直到最终计算得到长度为1的DFT。</p>
-<p>FFT算法的主要步骤如下：</p>
-<ol>
+<h2 id="FFT算法的主要步骤"><a href="#FFT算法的主要步骤" class="headerlink" title="FFT算法的主要步骤"></a>FFT算法的主要步骤</h2><ol>
 <li>如果输入序列长度为1，则直接返回该值作为DFT结果。</li>
 <li>将输入序列分为偶数索引和奇数索引两个子序列。</li>
 <li>对这两个子序列分别进行递归的FFT计算，得到它们的DFT结果。</li>
@@ -331,8 +338,7 @@
 </ol>
 <p>FFT算法通过将问题分解为更小的子问题，有效地减少了计算量。它的关键在于计算复杂度为O(N log N)，相比直接计算DFT的O(N^2)大大降低了计算时间。因此，FFT广泛应用于信号处理、频谱分析、图像处理和许多其他领域。</p>
 <p>FFT算法的主要思想是通过将信号分解为多个子问题，利用傅里叶变换的性质减少计算量。其中最常用的是Cooley-Tukey算法，该算法使用了迭代的方式，将FFT问题分解为较小规模的子问题。</p>
-<p>以下是Cooley-Tukey算法的基本原理：</p>
-<ol>
+<h2 id="Cooley-Tukey算法的基本原理"><a href="#Cooley-Tukey算法的基本原理" class="headerlink" title="Cooley-Tukey算法的基本原理"></a>Cooley-Tukey算法的基本原理</h2><ol>
 <li>将输入信号分为偶数索引和奇数索引两个子序列。</li>
 <li>对子序列进行递归地进行FFT计算。</li>
 <li>计算旋转因子，通过乘以旋转因子将奇数索引子序列与偶数索引子序列合并。</li>
